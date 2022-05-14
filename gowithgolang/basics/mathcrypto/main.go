@@ -5,10 +5,9 @@ import (
 	"fmt"
 	"math/big"
 	// "math/rand"
-	// "math/rand"
 )
 
-func main(){
+func main() {
 	fmt.Println("Random number generation")
 	// var mynumberOne int = 2;
 	// var mynumberTwo float64 = 3.44
@@ -18,10 +17,7 @@ func main(){
 	// rand.Seed(30)
 	// fmt.Println(rand.Intn(5)) // math/rand
 
-	myRandomNum,_ := rand.Int(rand.Reader,big.NewInt(5))
-
+	// TODO: Random number generation  using crypto
+	myRandomNum, _ := rand.Int(rand.Reader, big.NewInt(5))
 	fmt.Println(myRandomNum)
-
-
-
 }

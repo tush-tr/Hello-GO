@@ -116,3 +116,79 @@ func main() {
 
 ## Math, crypto and random numbers
 
+Two ways we can generate random numbers in Golang
+
+1. Math package
+
+```golang
+import (
+	"fmt"
+	"math/rand"
+)
+func main() {
+	fmt.Println("Random number generation")
+	rand.Seed(30)
+	fmt.Println(rand.Intn(5))
+}
+```
+
+2. Crypto package 
+
+```golang
+import (
+	"crypto/rand"
+	"fmt"
+	"math/big"
+)
+func main() {
+	myRandomNum, _ := rand.Int(rand.Reader, big.NewInt(5))
+	fmt.Println(myRandomNum)
+}
+```
+
+## Handling time in Golang
+
+```go
+package main
+
+import (
+	"fmt"
+	"time"
+)
+
+func main() {
+	fmt.Println("Welcome to time study of golang")
+	presentTime := time.Now()
+	fmt.Println(presentTime)
+	// Formatting the time and date
+	fmt.Println(presentTime.Format("01-02-2006 15:04:05 Monday"))
+	// Note: this is only format need to stick with it
+
+	createdDate := time.Date(2020, time.March, 10, 23, 23, 0, 0, time.Local)
+	fmt.Println(createdDate.Format("01-02-2006 15:04:05 Monday"))
+}
+```
+
+## Build in Go for Mac, Linux and windows
+Go allows us to build mac, linux and windows build files.
+
+check env variables in Go:
+
+```sh
+go env
+```
+
+using above command you will see this environment variable:
+
+```sh
+GOOS="linux"
+```
+
+Now for building your project for a target Operating system and target architecture 
+
+```sh
+$ GOOS="linux" GOARCH="amd64" go build
+$ GOOS="windows" GOARCH="amd64" go build # build exe file
+```
+
+<hr>
