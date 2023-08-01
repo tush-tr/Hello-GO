@@ -1,9 +1,15 @@
-## Variables in Golang
+- [Variables in Golang](#variables-in-golang)
+- [Types in Golang](#types-in-golang)
+	- [Types](#types)
+- [Comma ok Syntax and packages in golang](#comma-ok-syntax-and-packages-in-golang)
+- [Conversions in golang](#conversions-in-golang)
+- [Math, crypto and random numbers](#math-crypto-and-random-numbers)
+- [Handling time in Golang](#handling-time-in-golang)
+- [Build in Go for Mac, Linux and windows](#build-in-go-for-mac-linux-and-windows)
+# Variables in Golang
 to create a variable we use a keyword "var". There're other ways also like valorus operator(:) but we can't declare a variable using volarus operator outside a function(global scope)
 
 - we can use constants using const keyword.
-
-
 
 ```go
 package main
@@ -52,12 +58,12 @@ func main() {
 
 ```
 
-## Types in Golang
+# Types in Golang
 <li>Case insensitive; almost
 <li>Variable type should be known in advance
 <li>Everything is a type.
 
-### Types
+## Types
   - String
   - Bool
   - Integer
@@ -76,7 +82,8 @@ func main() {
   - channels
   - almost everything
 
-## Comma ok Syntax and packages in golang
+
+# Comma ok Syntax and packages in golang
 
 <li>Getting inputs in golang
 
@@ -91,7 +98,8 @@ reader := bufio.NewReader(os.Stdin)
 	fmt.Printf("Type of this rating is %T", input)
 ```
 
-## Conversions in golang
+
+# Conversions in golang
 
 ```Golang
 func main() {
@@ -108,13 +116,13 @@ func main() {
 		fmt.Println(err)
 	} else {
 		fmt.Println("Added 1 to your rating", numRating+1)
-
 	}
-
 }
 ```
 
-## Math, crypto and random numbers
+
+
+# Math, crypto and random numbers
 
 Two ways we can generate random numbers in Golang
 
@@ -146,7 +154,8 @@ func main() {
 }
 ```
 
-## Handling time in Golang
+
+# Handling time in Golang
 
 ```go
 package main
@@ -169,7 +178,7 @@ func main() {
 }
 ```
 
-## Build in Go for Mac, Linux and windows
+# Build in Go for Mac, Linux and windows
 Go allows us to build mac, linux and windows build files.
 
 check env variables in Go:
@@ -190,5 +199,3 @@ Now for building your project for a target Operating system and target architect
 $ GOOS="linux" GOARCH="amd64" go build
 $ GOOS="windows" GOARCH="amd64" go build # build exe file
 ```
-
-<hr>

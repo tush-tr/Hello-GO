@@ -1,11 +1,24 @@
-# Memory management and datatypes in Golang
+- [Memory Management](#memory-management)
+		- [**_new()_**](#new)
+		- [**_make()_**](#make)
+		- [Garbage collector](#garbage-collector)
+- [Pointers in Golang](#pointers-in-golang)
+- [Arrays in Golang](#arrays-in-golang)
+- [Slices in Golang](#slices-in-golang)
+	- [Slice length and capacity](#slice-length-and-capacity)
+	- [Declaring slices](#declaring-slices)
+	- [append method:](#append-method)
+	- [Nil slices](#nil-slices)
+	- [Another syntax for declaring Slices: make()](#another-syntax-for-declaring-slices-make)
+	- [Remove a value from Slice based on Index](#remove-a-value-from-slice-based-on-index)
 
-## Memory Management
+
+# Memory Management
 
 <li>Memory allocation and deallocation happens automatically.
 
 ### **_new()_**
-
+  
 <ul>
 <li>Allocate memory but no INIT
 <li>You will get memory address
@@ -28,6 +41,8 @@
 https://pkg.go.dev/runtime
 
 The GOGC variable sets the initial garbage collection target percentage. A collection is triggered when the ratio of freshly allocated data to live data remaining after the previous collection reaches this percentage. The default is GOGC=100. Setting GOGC=off disables the garbage collector entirely. The runtime/debug package's SetGCPercent function allows changing this percentage at run time. See https://golang.org/pkg/runtime/debug/#SetGCPercent.
+
+
 
 # Pointers in Golang
 
@@ -98,6 +113,7 @@ Slices are much more powerful and much used in Golang. Slices are under the hood
   - Changing the elements of a slice modifies the corresponding elements of its underlying array.
   - Other slices that share the same underlying array will see those changes.
 
+
 ## Slice length and capacity
 
 - A slice has both a length and a capacity.
@@ -136,8 +152,6 @@ fruitList = append(fruitList[1:])
 - A nil slice has a length and capacity of 0 and has no underlying array.
 
 
-
-
 ## Another syntax for declaring Slices: make()
 
 ```golang
@@ -153,5 +167,12 @@ highscores := make([]int, 4)
 	```
 
 
+## Remove a value from Slice based on Index 
+```go
+var courses = []string{"reactjs","javascript","swift","elasticSearch","docker","Kubernetes"}
+index := 2
+courses = append(courses[:index],courses[index+1:]...)
+```
 
+# Hey
 
